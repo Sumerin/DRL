@@ -11,7 +11,7 @@ from keras.applications.mobilenet_v2 import MobileNetV2
 
 clipping_val = 0.2
 critic_discount = 0.5
-entropy_beta = 0.0015
+entropy_beta = 0.15
 gamma = 0.99
 lmbda = 0.95
 
@@ -184,7 +184,7 @@ def one_hot_encoding(probs):
 image_based = True
 
 if image_based:
-    env = football_env.create_environment(env_name='academy_pass_and_shoot_with_keeper', representation='pixels', render=True)
+    env = football_env.create_environment(env_name='academy_empty_goal', representation='pixels',rewards='scoring,additional', render=True)
 else:
     env = football_env.create_environment(env_name='academy_empty_goal', representation='simple115')
 
@@ -256,7 +256,7 @@ while not target_reached and iters < max_iters:
     critic_loss = model_critic.fit([states], [np.reshape(returns, newshape=(-1, 1))], shuffle=True, epochs=8,
                                    verbose=True, callbacks=[tensor_board])
 
-    avg_reward = np.mean([test_reward() for _ in range(5)])
+    avg_reward = np.mean([test_reward() for _ in range(2)])
     print('total test reward=' + str(avg_reward))
     if avg_reward > best_reward:
         print('best reward=' + str(avg_reward))
