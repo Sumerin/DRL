@@ -2,18 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73fedb24-eb0f-4b28-9b0b-fb05d4151b13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/rl-bot-football.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_actor_0_1.0.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_critic_0_1.0.hdf5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/display_server.sh" beforeDir="false" afterPath="$PROJECT_DIR$/display_server.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579352492.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579352515.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579352558.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579427750.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579427812.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579427831.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579427869.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579427885.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579427921.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579427937.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579427973.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579427988.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579428027.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579428043.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579428080.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579428096.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579428133.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579428151.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579428189.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579428206.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579428242.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579428258.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579428295.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579428763.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579428782.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579428820.sumek-GE72-2QE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1579428836.sumek-GE72-2QE" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,14 +53,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="174" column="23" lean-forward="true" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
+            <state relative-caret-position="225">
+              <caret line="174" column="23" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="6" lean-forward="true" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -77,6 +102,7 @@
         <option value="$PROJECT_DIR$/dockerfile" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/train.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -266,7 +292,7 @@
       <workItem from="1579286143242" duration="6458000" />
       <workItem from="1579342004898" duration="7910000" />
       <workItem from="1579425484788" duration="125000" />
-      <workItem from="1579427676669" duration="1178000" />
+      <workItem from="1579427676669" duration="1456000" />
     </task>
     <servers />
   </component>
@@ -285,18 +311,18 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15671000" />
+    <option name="totallyTimeSpent" value="15949000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-2" width="1920" height="1082" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24599786" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24599786" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30640084" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30640084" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39979014" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -305,7 +331,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32948583" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32948583" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32948583" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -370,11 +396,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="174" column="23" lean-forward="true" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
+        <state relative-caret-position="225">
+          <caret line="174" column="23" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="6" lean-forward="true" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
         </state>
       </provider>
     </entry>
