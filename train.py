@@ -11,7 +11,7 @@ from keras.applications.mobilenet_v2 import MobileNetV2
 
 clipping_val = 0.2
 critic_discount = 0.5
-entropy_beta = 0.001
+entropy_beta = 0.0015
 gamma = 0.99
 lmbda = 0.95
 
@@ -184,7 +184,7 @@ def one_hot_encoding(probs):
 image_based = True
 
 if image_based:
-    env = football_env.create_environment(env_name='academy_empty_goal', representation='pixels', render=True)
+    env = football_env.create_environment(env_name='academy_pass_and_shoot_with_keeper', representation='pixels', render=True)
 else:
     env = football_env.create_environment(env_name='academy_empty_goal', representation='simple115')
 
@@ -208,7 +208,7 @@ ppo_steps = 255
 target_reached = False
 best_reward = 0
 iters = 0
-max_iters = 1000
+max_iters = 10
 
 while not target_reached and iters < max_iters:
 
