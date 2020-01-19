@@ -52,7 +52,7 @@ def ppo_loss_print(oldpolicy_probs, advantages, rewards, values):
         term_b = tf.Print(term_b, [term_b], 'term_b: ')
         total_loss = actor_loss - term_a + term_b
         total_loss = tf.Print(total_loss, [total_loss], 'total_loss: ')
-        return total_loss
+        return -total_loss
 
     return loss
 
@@ -67,7 +67,7 @@ def ppo_loss(oldpolicy_probs, advantages, rewards, values):
         critic_loss = K.mean(K.square(rewards - values))
         total_loss = actor_loss - critic_discount * critic_loss + entropy_beta * K.mean(
             (newpolicy_probs * K.log(newpolicy_probs + 1e-10)))
-        return total_loss
+        return -total_loss
 
     return loss
 
