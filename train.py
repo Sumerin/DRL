@@ -40,7 +40,7 @@ def ppo_loss_print(oldpolicy_probs, advantages, rewards, values):
         ratio = tf.Print(ratio, [ratio], 'ratio: ')
         p1 = ratio * advantages
         p2 = K.clip(ratio, min_value=1 - clipping_val, max_value=1 + clipping_val) * advantages
-        actor_loss = -K.mean(K.minimum(p1, p2))
+        actor_loss = K.mean(K.minimum(p1, p2))
         actor_loss = tf.Print(actor_loss, [actor_loss], 'actor_loss: ')
         critic_loss = K.mean(K.square(rewards - values))
         critic_loss = tf.Print(critic_loss, [critic_loss], 'critic_loss: ')
@@ -48,9 +48,9 @@ def ppo_loss_print(oldpolicy_probs, advantages, rewards, values):
         term_a = tf.Print(term_a, [term_a], 'term_a: ')
         term_b_2 = K.log(newpolicy_probs + 1e-10)
         term_b_2 = tf.Print(term_b_2, [term_b_2], 'term_b_2: ')
-        term_b = entropy_beta * K.mean(-(newpolicy_probs * term_b_2))
+        term_b = entropy_beta * K.mean((newpolicy_probs * term_b_2))
         term_b = tf.Print(term_b, [term_b], 'term_b: ')
-        total_loss = term_a + actor_loss - term_b
+        total_loss = actor_loss - term_a + term_b
         total_loss = tf.Print(total_loss, [total_loss], 'total_loss: ')
         return total_loss
 
@@ -63,10 +63,10 @@ def ppo_loss(oldpolicy_probs, advantages, rewards, values):
         ratio = K.exp(K.log(newpolicy_probs + 1e-10) - K.log(oldpolicy_probs + 1e-10))
         p1 = ratio * advantages
         p2 = K.clip(ratio, min_value=1 - clipping_val, max_value=1 + clipping_val) * advantages
-        actor_loss = -K.mean(K.minimum(p1, p2))
+        actor_loss = K.mean(K.minimum(p1, p2))
         critic_loss = K.mean(K.square(rewards - values))
-        total_loss = critic_discount * critic_loss + actor_loss - entropy_beta * K.mean(
-            -(newpolicy_probs * K.log(newpolicy_probs + 1e-10)))
+        total_loss = actor_loss - critic_discount * critic_loss + entropy_beta * K.mean(
+            (newpolicy_probs * K.log(newpolicy_probs + 1e-10)))
         return total_loss
 
     return loss
@@ -91,12 +91,12 @@ def get_model_actor_image(input_dims, output_dims):
 
     model = Model(inputs=[state_input, oldpolicy_probs, advantages, rewards, values],
                   outputs=[out_actions])
-    model.compile(optimizer=Adam(lr=1e-4), loss=[ppo_loss(
+    model.compile(optimizer=Adam(lr=1e-3), loss=[ppo_loss(
         oldpolicy_probs=oldpolicy_probs,
         advantages=advantages,
         rewards=rewards,
         values=values)])
-    model.summary()
+    #model.summary()
     return model
 
 
@@ -138,7 +138,7 @@ def get_model_critic_image(input_dims):
 
     model = Model(inputs=[state_input], outputs=[out_actions])
     model.compile(optimizer=Adam(lr=1e-4), loss='mse')
-    model.summary()
+    #model.summary()
     return model
 
 
@@ -163,14 +163,14 @@ def test_reward():
     print('testing...')
     limit = 0
     while not done:
-        state_input = K.expand_dims(state, 0)
+        state_input = np.expand_dims(state, 0)
         action_probs = model_actor.predict([state_input, dummy_n, dummy_1, dummy_1, dummy_1], steps=1)
         action = np.argmax(action_probs)
         next_state, reward, done, _ = env.step(action)
         state = next_state
         total_reward += reward
         limit += 1
-        if limit > 20:
+        if limit > 120:
             break
     return total_reward
 
@@ -181,7 +181,7 @@ def one_hot_encoding(probs):
     return one_hot
 
 
-image_based = False
+image_based = True
 
 if image_based:
     env = football_env.create_environment(env_name='academy_empty_goal', representation='pixels', render=True)
@@ -204,14 +204,15 @@ else:
     model_actor = get_model_actor_simple(input_dims=state_dims, output_dims=n_actions)
     model_critic = get_model_critic_simple(input_dims=state_dims)
 
-ppo_steps = 128
+ppo_steps = 255
 target_reached = False
 best_reward = 0
 iters = 0
-max_iters = 50
+max_iters = 1000
 
 while not target_reached and iters < max_iters:
 
+    print('T_iter: ' + str(iters))
     states = []
     actions = []
     values = []
@@ -222,7 +223,7 @@ while not target_reached and iters < max_iters:
     state_input = None
 
     for itr in range(ppo_steps):
-        state_input = K.expand_dims(state, 0)
+        state_input = np.expand_dims(state, 0)
         action_dist = model_actor.predict([state_input, dummy_n, dummy_1, dummy_1, dummy_1], steps=1)
         q_value = model_critic.predict([state_input], steps=1)
         action = np.random.choice(n_actions, p=action_dist[0, :])
